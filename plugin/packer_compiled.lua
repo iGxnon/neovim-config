@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/igxnon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/igxnon/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/tami5/lspsaga.nvim"
+  },
   ["lualine-lsp-progress"] = {
     loaded = true,
     path = "/Users/igxnon/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
@@ -193,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/igxnon/.local/share/nvim/site/pack/packer/start/sonokai",
     url = "https://github.com/sainnhe/sonokai"
+  },
+  ["telescope-env.nvim"] = {
+    loaded = true,
+    path = "/Users/igxnon/.local/share/nvim/site/pack/packer/start/telescope-env.nvim",
+    url = "https://github.com/LinArcX/telescope-env.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

@@ -57,7 +57,7 @@ map("v", "p", '"_dP', opt)
 
 -- 退出
 map("n", "q", ":q<CR>", opt)
-map("n", "qq", ":q!<CR>", opt)
+map("n", "qqq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
@@ -75,8 +75,11 @@ map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
+-- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>e", ":Telescope env<CR>", opt)
+map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 
 -- 插件快捷键
 local pluginKeys = {}
@@ -108,19 +111,27 @@ pluginKeys.nvimTreeList = {
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
   -- rename
-  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+  -- mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+  mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
   -- code action
-  mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+  -- mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+  mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
   -- go xx
   mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  -- mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<CR>", opt)
   mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
-  mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+  -- mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+  mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
   -- diagnostic
-  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+  --  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+  --  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+  -- mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+  mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
+
   mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opt)
   -- 没用到
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
@@ -142,9 +153,9 @@ pluginKeys.cmp = function(cmp)
       c = cmp.mapping.close()
     }),
     -- 上一个
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["k"] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["j"] = cmp.mapping.select_next_item(),
     -- 确认
     ["<CR>"] = cmp.mapping.confirm({
       select = true,
@@ -155,5 +166,24 @@ pluginKeys.cmp = function(cmp)
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
   }
 end
+
+-- Telescope 列表中 插入模式快捷键
+pluginKeys.telescopeList = {
+  i = {
+    -- 上下移动
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<Down>"] = "move_selection_next",
+    ["<Up>"] = "move_selection_previous",
+    -- 历史记录
+    ["<C-n>"] = "cycle_history_next",
+    ["<C-p>"] = "cycle_history_prev",
+    -- 关闭窗口
+    ["<C-c>"] = "close",
+    -- 预览窗口上下滚动
+    ["<C-u>"] = "preview_scrolling_up",
+    ["<C-d>"] = "preview_scrolling_down",
+  },
+}
 
 return pluginKeys

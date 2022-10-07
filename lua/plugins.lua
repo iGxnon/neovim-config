@@ -43,6 +43,9 @@ packer.startup({
       run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    use "LinArcX/telescope-env.nvim"
+    use("tami5/lspsaga.nvim")
+
   end,
   config = {
     display = {
