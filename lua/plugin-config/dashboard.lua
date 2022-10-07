@@ -27,7 +27,7 @@ db.custom_center = {
   },
   {
     icon = "  ",
-    desc = "Edit keybindings                    ",
+    desc = "Edit keybindings                     ",
     action = "edit ~/.config/nvim/lua/keybindings.lua",
   }
 }
