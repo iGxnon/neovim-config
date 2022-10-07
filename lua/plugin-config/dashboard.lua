@@ -6,27 +6,27 @@ end
 
 db.custom_footer = {
   "",
-  "powered by neovim",
+  "🚀 powered by neovim 🚀",
 }
 
 db.custom_center = {
   {
-    icon = "  ",
+    icon = " 📝  ",
     desc = "Projects                             ",
     action = "Telescope projects",
   },
   {
-    icon = "  ",
+    icon = " 📅  ",
     desc = "Recently files                       ",
     action = "Telescope oldfiles",
   },
   {
-    icon = "  ",
+    icon = "⚙️  ",
     desc = "Edit Projects                        ",
     action = "edit ~/.local/share/nvim/project_nvim/project_history",
   },
   {
-    icon = "  ",
+    icon = "⌨️  ",
     desc = "Edit keybindings                     ",
     action = "edit ~/.config/nvim/lua/keybindings.lua",
   }

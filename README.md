@@ -1,6 +1,47 @@
 # 泡泡的 neovim 配置
 
-> 其中大量参考了 [https://github.com/nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
+> 其中大量参考了(~~照搬~~) [https://github.com/nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
+
+## 安装
+
+> 以 `apt-get` 包管理器为例
+
+> 将仓库拷贝到 `~/.config/nvim/` 下，配置完毕后在随便打开一个文件输入  `:PackerSync` 同步依赖
+
+### 安装插件管理器 `Packer`
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+### 安装 `telescope` 的依赖
+
+- 安装 `repgrep`
+
+```bash
+# 方案一：apt-get
+
+sudo add-apt-repository ppa:x4121/ripgrep
+sudo apt-get update
+sudo apt install ripgrep
+```
+
+```bash
+# 方案二：从 https://github.com/BurntSushi/ripgrep/releases/ 下载
+```
+
+- 安装 `fd-find`
+
+```bash
+# 方案一：使用 npm
+
+npm install -g fd-find
+```
+
+```bash
+# 方案二：从 https://github.com/sharkdp/fd/releases/ 中下载
+```
 
 ## 文件目录
 
@@ -14,7 +55,7 @@
     ├── keybindings.lua						快捷键绑定配置文件
     ├── lsp												语言服务协议(补全，提示)文件夹
     │   ├── cmp.lua								补全配置文件
-    │   ├── config								不同语言LSP配置文件
+    │   ├── config								不同语言LSP配置文件夹
     │   └── setup.lua							LSP初始化文件
     ├── plugin-config							插件配置文件
     │   ├── bufferline.lua				bufferline(tap)配置文件
@@ -25,6 +66,40 @@
     │   └── project.lua						项目页面配置文件
     └── plugins.lua								插件配置文件
 ```
+
+## 配置文件
+
+> 这里列出了可能需要配置的部分
+
+- `./lua/keybindings.lua`
+
+> 快捷键映射文件
+
+-  `./lua/colorscheme.lua`
+
+> 主题文件
+>
+> 配置第一行的主题名称即可
+
+- `./lua/plugin-config/nvim-treesitter.lua`
+
+> 配置不同语言的高亮、缩进、增量选择、折叠
+
+<img src="https://img.skygard.cn/截屏2022-10-07 15.52.00.png" style="zoom: 50%"/>
+
+- `./lua/lsp/setup.lua`
+
+> 配置语言服务器协议及其初始化文件
+
+<img src="https://img.skygard.cn/截屏2022-10-07 16.00.38.png" style="zoom: 50%"/>
+
+- `./lua/plugin-config/dashboard.lua`
+
+> 启动页配置
+>
+> 配置启动页图标，Banner 和 Footer
+
+
 
 ## 快捷键
 
