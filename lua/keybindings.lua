@@ -65,15 +65,15 @@ map("n", "<C-x>", "dd", opt)
 
 -- 重复本行
 map("i", "<C-d>", "<Esc>yypi", opt)
-map("i", "<C-d>", "<Esc>yypi", opt)
+map("n", "<C-d>", "yyp", opt)
 
 
 -- 上下滚动浏览
-map("n", "<C-j>", "4j", opt)
-map("n", "<C-k>", "4k", opt)
+map("n", "<C-j>", "5j", opt)
+map("n", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-d>", "9j", opt)
-map("n", "<C-u>", "9k", opt)
+-- map("n", "<C-d>", "9j", opt)
+-- map("n", "<C-u>", "9k", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
@@ -128,7 +128,7 @@ pluginKeys.nvimTreeList = {
   { key = "x", action = "cut" },
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
-  { key = "s", action = "system_open" },
+  -- { key = "s", action = "system_open" },
 }
 
 -- lsp 回调函数快捷键设置

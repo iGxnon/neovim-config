@@ -2,9 +2,9 @@
 
 > 其中大量参考了(~~照搬~~) [https://github.com/nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
 
-## 安装
+> 配合 [Neovide](https://github.com/neovide/neovide) 使用更佳！
 
-> 以 `apt-get` 包管理器为例
+## 安装
 
 > 将仓库拷贝到 `~/.config/nvim/` 下，配置完毕后在随便打开一个文件输入  `:PackerSync` 同步依赖
 
@@ -22,9 +22,13 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```bash
 # 方案一：apt-get
 
+# Debian/Ubuntupei zhi
 sudo add-apt-repository ppa:x4121/ripgrep
 sudo apt-get update
 sudo apt install ripgrep
+
+# Arch
+yay -S ripgrep
 ```
 
 ```bash
@@ -37,6 +41,9 @@ sudo apt install ripgrep
 # 方案一：使用 npm
 
 npm install -g fd-find
+
+# Arch
+yay -S fd
 ```
 
 ```bash
@@ -96,6 +103,8 @@ npm install -g fd-find
 - `./lua/lsp/setup.lua`
 
 > 配置语言服务器协议及其初始化文件
+>
+> `require("lsp.config.common")` 作为默认的 LSP 配置
 
 <img src="https://img.skygard.cn/截屏2022-10-07 16.00.38.png" style="zoom: 50%"/>
 
@@ -110,6 +119,8 @@ npm install -g fd-find
 > Mac 上 Alt 使用 Option 键代替
 >
 > [leader] 默认配置的是 空格 键
+>
+> Ban 掉了方向键
 
 #### 分屏相关 (Normal 模式下)
 
@@ -133,12 +144,9 @@ npm install -g fd-find
 
 #### 浏览代码 (Normal 模式下)
 
-- Ctrl + <j,k>  ——  上下预览(4 行)
-- Ctrl + <u,d>  ——  快速上下预览(9 行)
+- Ctrl + <j,k>  ——  上下预览(5 行)
 - Shift + [Left, Right]  ——  按单词左右跳转
 - Shift + [Up, Down]  ——  快速翻页
-- [Home] ——  行首
-- [End]  ——  行尾
 - I  ——  行首插入
 - A  ——  行尾插入
 
@@ -166,13 +174,14 @@ npm install -g fd-find
 - 打开搜索框之后
   - Ctrl + <u,d>  ——  上下代码预览
   - Ctrl + <j,k>  ——  插入模式下上下翻动
+  - Ctrl + <n,p>  ——  历史记录
 
 #### 补全相关 (Normal 模式下)
 
 - Alt + .   ——  强制打开补全
 - Alt + ,   ——  关闭补全
-- j   ——  下一个补全
-- k  ——  上一个补全
+- Ctrl + j   ——  下一个补全
+- Ctrl + k  ——  上一个补全
 
 #### 代码跳转，调整相关 (Normal 模式下)
 
@@ -187,3 +196,7 @@ npm install -g fd-find
 - gp  ——  弹窗查看提示
 - gj  ——  下一个提示
 - gk  ——  上一个提示
+- [leader]f  ——  格式化代码
+- Ctrl + d  ——  复制一行
+- Ctrl + x  ——  删除一行
+
