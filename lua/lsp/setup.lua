@@ -6,9 +6,12 @@ local lsp_installer = require("nvim-lsp-installer")
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
-  gopls = require("lsp.config.go"), -- lua/lsp/config/go.lua
+  gopls = require("lsp.config.common"), -- lua/lsp/config/common.lua
   rust_analyzer = require("lsp.config.rust"),
-  dockerls = require("lsp.config.dockerls")
+  dockerls = require("lsp.config.common"),
+  jdtls = require("lsp.config.common"),
+  clangd = require("lsp.config.common"),
+  pyright = require("lsp.config.common")
 }
 -- 自动安装 Language Servers
 for name, _ in pairs(servers) do
