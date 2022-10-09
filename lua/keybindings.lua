@@ -5,6 +5,20 @@ local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
 local opt = { noremap = true, silent = true }
 
+-- 取消绑定 <Up> <Down> <Home> <End> 破釜沉舟（
+map("", "<Up>", "", opt)
+map("", "<Down>", "", opt)
+map("", "<Left>", "", opt)
+map("", "<Right>", "", opt)
+map("", "<Home>", "", opt)
+map("", "<End>", "", opt)
+map("i", "<Up>", "", opt)
+map("i", "<Down>", "", opt)
+map("i", "<Left>", "", opt)
+map("i", "<Right>", "", opt)
+map("i", "<Home>", "", opt)
+map("i", "<End>", "", opt)
+
 -- 取消 s 默认功能
 map("n", "s", "", opt)
 -- windows 分屏快捷键
@@ -45,12 +59,21 @@ map("v", ">", ">gv", opt)
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
+-- 删除此行
+map("i", "<C-x>", "<Esc>ddi", opt)
+map("n", "<C-x>", "dd", opt)
+
+-- 重复本行
+map("i", "<C-d>", "<Esc>yypi", opt)
+map("i", "<C-d>", "<Esc>yypi", opt)
+
+
 -- 上下滚动浏览
 map("n", "<C-j>", "4j", opt)
 map("n", "<C-k>", "4k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
+map("n", "<C-u>", "9k", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
@@ -153,9 +176,9 @@ pluginKeys.cmp = function(cmp)
       c = cmp.mapping.close()
     }),
     -- 上一个
-    ["k"] = cmp.mapping.select_prev_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ["j"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     -- 确认
     ["<CR>"] = cmp.mapping.confirm({
       select = true,
