@@ -216,3 +216,13 @@ yay -S fd
 - c　——　复制
 - p　——　粘贴
 
+# 图图
+
+<img src="https://img.skygard.cn/20221010135257.png" style="zoom:20%"/>
+
+<img src="https://img.skygard.cn/20221010135949.png" style="zoom: 20%"/>
+
+<img src="https://img.skygard.cn/20221010140639.png" style="zoom: 20%"/>
+
+<img src="https://img.skygard.cn/20221010140944.png" style="zoom: 40%"/>
+
