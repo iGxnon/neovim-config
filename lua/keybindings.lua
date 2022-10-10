@@ -72,8 +72,8 @@ map("n", "<C-d>", "yyp", opt)
 map("n", "<C-j>", "5j", opt)
 map("n", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
--- map("n", "<C-d>", "9j", opt)
--- map("n", "<C-u>", "9k", opt)
+map("n", "<C-u>", "10j", opt)
+map("n", "<C-i>", "10k", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
