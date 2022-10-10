@@ -45,6 +45,11 @@ packer.startup({
 
     use "LinArcX/telescope-env.nvim"
     use("tami5/lspsaga.nvim")
+    use("windwp/nvim-autopairs")
+    use("numToStr/Comment.nvim")
+    use('mfussenegger/nvim-dap')
+    use("theHamsta/nvim-dap-virtual-text")
+    use("rcarriga/nvim-dap-ui")
 
   end,
   config = {
