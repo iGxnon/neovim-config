@@ -60,8 +60,8 @@ map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 删除此行
-map("i", "<C-x>", "<Esc>ddi", opt)
-map("n", "<C-x>", "dd", opt)
+map("i", "<C-x>", "<Esc>cci", opt)
+map("n", "<C-x>", "cc<Esc>", opt)
 
 -- 重复本行
 map("i", "<C-d>", "<Esc>yypi", opt)
@@ -128,7 +128,7 @@ pluginKeys.nvimTreeList = {
   { key = "x", action = "cut" },
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
-  -- { key = "s", action = "system_open" },
+  { key = "s", action = "" },
 }
 
 -- lsp 回调函数快捷键设置
