@@ -28,11 +28,11 @@ map("n", "sh", ":sp<CR>", opt)
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
 map("n", "so", "<C-w>o", opt)
--- Alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+-- Shift + hjkl  窗口之间跳转
+map("n", "<S-h>", "<C-w>h", opt)
+map("n", "<S-j>", "<C-w>j", opt)
+map("n", "<S-k>", "<C-w>k", opt)
+map("n", "<S-l>", "<C-w>l", opt)
 
 -- 左右比例控制
 map("n", "s,", ":vertical resize -10<CR>", opt)
@@ -47,10 +47,10 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "<leader>t", ":sp | terminal<CR>", opt)
 map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
+map("t", "<S-h>", [[ <C-\><C-N><C-w>h ]], opt)
+map("t", "<S-j>", [[ <C-\><C-N><C-w>j ]], opt)
+map("t", "<S-k>", [[ <C-\><C-N><C-w>k ]], opt)
+map("t", "<S-l>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -108,8 +108,8 @@ map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 local pluginKeys = {}
 
 -- nvim-tree
--- alt + m 键打开关闭tree
-map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
+-- Shift + m 键打开关闭tree
+map("n", "<S-m>", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹
@@ -169,9 +169,9 @@ end
 pluginKeys.cmp = function(cmp)
   return {
     -- 出现补全
-    ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<S-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- 取消
-    ["<A-,>"] = cmp.mapping({
+    ["<S-,>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close()
     }),
