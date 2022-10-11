@@ -6,7 +6,7 @@ local lsp_installer = require("nvim-lsp-installer")
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
-  gopls = require("lsp.config.common"), -- lua/lsp/config/common.lua
+  gopls = require("lsp.config.go"), -- lua/lsp/config/common.lua
   rust_analyzer = require("lsp.config.rust"),
   dockerls = require("lsp.config.common"),
   jdtls = require("lsp.config.common"),
@@ -27,7 +27,7 @@ end
 lsp_installer.on_server_ready(function(server)
   local config = servers[server.name]
   if config == nil then
-    return
+    config = require("lsp.config.common")
   end
   if config.on_setup then
     config.on_setup(server)

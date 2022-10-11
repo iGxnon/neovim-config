@@ -50,6 +50,7 @@ packer.startup({
     use('mfussenegger/nvim-dap')
     use("theHamsta/nvim-dap-virtual-text")
     use("rcarriga/nvim-dap-ui")
+    use('wakatime/vim-wakatime')
 
   end,
   config = {

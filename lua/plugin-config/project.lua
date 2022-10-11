@@ -20,7 +20,7 @@ project.setup({
     "Makefile",
     "package.json",
     ".sln",
-    "go.mod",
+    "go.work",
   },
 })
 
