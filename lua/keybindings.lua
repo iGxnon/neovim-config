@@ -59,14 +59,13 @@ map("v", ">", ">gv", opt)
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
--- 删除此行
+-- 复制此行
 map("i", "<C-x>", "<Esc>cci", opt)
 map("n", "<C-x>", "cc<Esc>", opt)
 
 -- 重复本行
 map("i", "<C-d>", "<Esc>yypi", opt)
 map("n", "<C-d>", "yyp", opt)
-
 
 -- 上下滚动浏览
 map("n", "<C-j>", "5j", opt)
@@ -81,7 +80,7 @@ map("v", "p", '"_dP', opt)
 -- 退出
 map("n", "q", ":q<CR>", opt)
 map("n", "qqq", ":q!<CR>", opt)
-map("n", "Q", ":qa!<CR>", opt)
+-- map("n", "Q", ":qa!<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
@@ -128,7 +127,7 @@ pluginKeys.nvimTreeList = {
   { key = "x", action = "cut" },
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
-  { key = "s", action = "" },
+  { key = "s", action = "edit" },
 }
 
 -- lsp 回调函数快捷键设置
@@ -180,7 +179,7 @@ pluginKeys.cmp = function(cmp)
     -- 下一个
     ["<C-j>"] = cmp.mapping.select_next_item(),
     -- 确认
-    ["<CR>"] = cmp.mapping.confirm({
+    ["<C-CR>"] = cmp.mapping.confirm({
       select = true,
       behavior = cmp.ConfirmBehavior.Replace
     }),
