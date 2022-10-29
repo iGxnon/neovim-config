@@ -23,7 +23,7 @@ db.custom_center = {
   {
     icon = "    ⚙️   ",
     desc = "Edit Projects                        ",
-    action = "edit ~/AppData/Local/share/nvim/project_nvim/project_history",
+    action = "edit ~/AppData/Local/nvim-data/project_nvim/project_history",
   },
   {
     icon = "    ⌨️   ",

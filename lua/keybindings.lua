@@ -44,8 +44,8 @@ map("n", "sk", ":resize -5<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 -- Terminal相关
-map("n", "<leader>t", ":sp | terminal<CR>", opt)
-map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+map("n", "<leader>t", ":sp | terminal powershell<CR>", opt)
+map("n", "<leader>vt", ":vsp | terminal powershell<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("t", "<S-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<S-j>", [[ <C-\><C-N><C-w>j ]], opt)

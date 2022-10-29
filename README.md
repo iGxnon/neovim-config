@@ -1,4 +1,4 @@
-# 泡泡的 neovim 配置
+# 泡泡的 neovim 配置 -- Windows
 
 > 其中大量参考了(~~照搬~~) [https://github.com/nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
 
@@ -6,29 +6,23 @@
 
 ## 安装
 
-> 将仓库拷贝到 `~/.config/nvim/` 下，配置完毕后在随便打开一个文件输入  `:PackerSync` 同步依赖
+> 将仓库拷贝到 `~/AppData/Local/nvim/` 下，配置完毕后在随便打开一个文件输入  `:PackerSync` 同步依赖
 
 ### 安装插件管理器 `Packer`
 
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ~/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim
 ```
 
 ### 安装 `telescope` 的依赖
 
-- 安装 `repgrep`
+- 安装 `ripgrep`
 
 ```bash
-# 方案一：apt-get
+方案一：scoop
 
-# Debian/Ubuntupei zhi
-sudo add-apt-repository ppa:x4121/ripgrep
-sudo apt-get update
-sudo apt install ripgrep
-
-# Arch
-yay -S ripgrep
+scoop install ripgrep
 ```
 
 ```bash
@@ -38,12 +32,9 @@ yay -S ripgrep
 - 安装 `fd-find`
 
 ```bash
-# 方案一：使用 npm
+# 方案一：使用 scoop
 
-npm install -g fd-find
-
-# Arch
-yay -S fd
+scoop install fd
 ```
 
 ```bash
