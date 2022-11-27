@@ -23,6 +23,9 @@ cmp.setup({
     -- For vsnip users.
     { name = "vsnip" },
 
+    -- rust crates
+    { name = "crates" },
+
     -- For luasnip users.
     -- { name = 'luasnip' },
 

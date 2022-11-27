@@ -8,6 +8,9 @@ packer.startup({
     -- 主题
     use 'sainnhe/sonokai'
     use 'shaunsingh/solarized.nvim'
+    use 'folke/tokyonight.nvim'
+    use 'tanvirtin/monokai.nvim'
+
     -- 插件
     use {
       'kyazdani42/nvim-tree.lua',
@@ -23,7 +26,7 @@ packer.startup({
     use("ahmedkhalf/project.nvim")
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("williamboman/nvim-lsp-installer")
-    use({ "neovim/nvim-lspconfig" })
+    use("neovim/nvim-lspconfig")
 
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/vim-vsnip")
@@ -37,7 +40,14 @@ packer.startup({
     use("rafamadriz/friendly-snippets")
     use("simrat39/rust-tools.nvim")
     use("b0o/schemastore.nvim")
-
+    use {
+      'saecki/crates.nvim',
+      event = { "BufRead Cargo.toml" },
+      requires = { { 'nvim-lua/plenary.nvim' } },
+      config = function()
+        require('crates').setup()
+      end,
+    }
     use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,

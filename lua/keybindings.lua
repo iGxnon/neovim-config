@@ -47,10 +47,10 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "<leader>t", ":sp | terminal<CR>", opt)
 map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<S-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<S-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<S-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<S-l>", [[ <C-\><C-N><C-w>l ]], opt)
+map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
+map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
+map("t", "<C-k>", [[ <C-\><C-N><C-w>k ]], opt)
+map("t", "<C-l>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -62,6 +62,10 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- 复制此行
 map("i", "<C-x>", "<Esc>cci", opt)
 map("n", "<C-x>", "cc<Esc>", opt)
+
+-- 保存
+map("i", "<C-s>", "<Esc>:w<CR>a", opt)
+map("n", "<C-s>", ":w<CR>", opt)
 
 -- 重复本行
 map("i", "<C-d>", "<Esc>yypi", opt)
