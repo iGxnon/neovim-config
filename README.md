@@ -8,6 +8,18 @@
 
 > 配合 [Neovide](https://github.com/neovide/neovide) 使用更佳！
 
+## 动机
+
+编写 rust 的集成开发环境种类丰富， `Intellij IDEA`，`CLion`，`VSCode` 等，它们都有一个特点
+
+**占用内存太大！**
+
+16G内存的Mac，写 `rust` 时只需要多开一个`Docker Desktop`，就会变得捉襟见肘。如果挂了一个 Parallels Desktop，那内存分分钟就会爆红
+
+在使用 IDEA 和 CLion 时，它们都会随着项目打开慢慢变得卡顿，内存占用也会慢慢变高 (最后大概在 `5-6G` 左右)
+
+所以我将目光投向了 nvim
+
 ## 安装
 
 1. 安装 `neovim`，使用到的版本为 `0.8.2`，不要低于 `0.7`
@@ -145,6 +157,8 @@
 - [leader]a  ——  code actions
 - gd  ——  跳转到定义处
 - gh  ——  显示提示
+  - [leader]ha  ——  `rust-tools` 中的 hover action
+
 - gD  ——  查看类型定义
 - gi   ——  查看实现
 - gr  ——  查看引用
